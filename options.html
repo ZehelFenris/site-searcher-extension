@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head><title>Manage Wikis</title></head>
-<body>
-  <h2>Custom Wikis</h2>
-  <ul id="wikiList"></ul>
-  <h3>Add New Wiki</h3>
-  <input type="text" id="wikiName" placeholder="Name" />
-  <input type="text" id="wikiURL" placeholder="URL prefix (e.g., https://example.com/wiki/)" />
-  <button id="addBtn">Add</button>
-  <script src="options.js"></script>
-</body>
+  <head>
+    <title>Manage Wikis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="options">
+      <div class="add-wiki-section">
+        <h3>Add New Wiki</h3>
+        <input type="text" id="wikiName" placeholder="Name" /><br />
+        <input type="text" id="wikiURL" placeholder="Search URL ( e.g., https://example.com/wiki/?search= )" /><br />
+        <button id="addBtn">Add</button>
+      </div>
+
+      <div class="wiki-table-section">
+        <h2>Custom Wikis</h2>
+        <table id="wikiTable" class="wiki-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>URL</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+        
+    </div>
+    <script src="options.js"></script>
+  </body>
 </html>
+

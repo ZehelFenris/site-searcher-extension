@@ -1,0 +1,108 @@
+/* ==== Shared Defaults ==== */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* ==== POPUP STYLES ==== */
+.popup input,
+.popup select,
+.popup button {
+    width: 200px;
+    margin-bottom: 8px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+.popup button {
+    cursor: pointer;
+}
+.popup a {
+    font-size: 12px;
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: white;
+}
+.popup a:hover {
+    text-decoration: underline;
+}
+
+/* ==== OPTIONS STYLES ==== */
+body, .options {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+}  
+.options input, .options button {
+    background-color: #2d2d3d;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 6px;
+}  
+.options input::placeholder {
+    color: #aaa;
+}  
+.options button {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}  
+.options button:hover {
+    background-color: #2563eb;
+}
+.options .wiki-table-section {
+    max-width: 1000px;
+    margin: 50px auto 0px auto; /* center horizontally and add bottom spacing */
+    padding: 0 10px;
+}
+.options .wiki-table-section h2 {
+    text-align: center;
+}  
+.options .wiki-table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+}  
+.options .wiki-table th,
+.options .wiki-table td {
+    border: 1px solid #444;
+    padding: 6px;
+    text-align: left;
+}  
+.options .wiki-table th {
+    background-color: #2a2a3b;
+}  
+.options a {
+    color: #60a5fa;
+    text-decoration: none;
+}  
+.options a:hover {
+    text-decoration: underline;
+}
+.options .add-wiki-section {
+    max-width: 500px;
+    margin: auto; /* center horizontally with top spacing */
+    text-align: center;
+}
+.options .add-wiki-section input {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}  
+.options .add-wiki-section button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.options .add-wiki-section button:hover {
+    background-color: #2563eb;
+}
+  
