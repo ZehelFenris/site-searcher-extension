@@ -1,4 +1,4 @@
-# Site Searcher Chrome Extension
+# Site Searcher Chromium Extension
 
 Search across different wikis using a customizable dropdown menu.
 
