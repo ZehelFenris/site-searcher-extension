@@ -13,13 +13,9 @@ Search across different wikis using a customizable dropdown menu.
 
 1. Download this repository.
 2. Put the files at your prefered location.
-3. Open Chrome and go to `chrome://extensions/`
+3. Open your Chromium browser and go to extensions
 4. Enable **Developer Mode**
 5. Click **Load Unpacked** and select the extension folder.
-
-## Screenshots
-
-*(Add your screenshots here)*
 
 ## License
 
