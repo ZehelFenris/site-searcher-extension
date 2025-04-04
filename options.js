@@ -1,5 +1,6 @@
 function loadWikis() {
-  chrome.storage.sync.get(["wikis"], (result) => {
+  chrome.storage.sync.get(["wikis", "defaultWiki"], (result) => {
+    const defaultUrl = result.defaultWiki;
     const wikis = result.wikis || [];
     const tbody = document.querySelector("#wikiTable tbody");
     tbody.innerHTML = "";
@@ -11,8 +12,12 @@ function loadWikis() {
 
       const nameCell = document.createElement("td");
       nameCell.textContent = wiki.name;
+      if (wiki.url === defaultUrl) {
+        nameCell.textContent += " (default)";
+        nameCell.style.fontWeight = "bold";
+      }
       row.appendChild(nameCell);
-
+      
       const urlCell = document.createElement("td");
       urlCell.textContent = wiki.url;
       row.appendChild(urlCell);
@@ -25,13 +30,18 @@ function loadWikis() {
         chrome.storage.sync.set({ wikis }, loadWikis);
       };
       actionCell.appendChild(delBtn);
-      row.appendChild(actionCell);
+      const setDefaultBtn = document.createElement("button");
+      setDefaultBtn.textContent = "Set Default";
+      setDefaultBtn.onclick = () => {
+        chrome.storage.sync.set({ defaultWiki: wiki.url }, loadWikis);
+      };
+      actionCell.appendChild(setDefaultBtn);
+            row.appendChild(actionCell);
 
       tbody.appendChild(row);
     });
   });
 }
-
 
 document.getElementById("addBtn").addEventListener("click", () => {
   const name = document.getElementById("wikiName").value.trim();
@@ -48,6 +58,17 @@ document.getElementById("addBtn").addEventListener("click", () => {
       });
     });
   }
+});
+
+// Load current icon preference
+chrome.storage.sync.get(["useColorIcon"], (result) => {
+  document.getElementById("useColorIcon").checked = result.useColorIcon || false;
+});
+
+// Save preference when toggled
+document.getElementById("useColorIcon").addEventListener("change", (e) => {
+  const useColor = e.target.checked;
+  chrome.storage.sync.set({ useColorIcon: useColor });
 });
 
 document.addEventListener("DOMContentLoaded", loadWikis);

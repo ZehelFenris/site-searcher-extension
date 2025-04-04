@@ -13,9 +13,29 @@
         <button id="addBtn">Add</button>
       </div>
 
+      
       <div class="wiki-table-section">
+        <div class="url-tip">
+          <strong>Tip:</strong> You can control where the search term appears by using <code>{[searchTerm]}</code> in the URL.<br><br>
+          <em>Example:</em><br>
+          <code>https://example.com/search?q={[searchTerm]}&lang=en</code><br><br>
+          If you don't use <code>{[searchTerm]}</code>, your search will be added to the end of the URL by default.
+        </div>
+
+        <div class="icon-style-toggle">
+          <label>
+            <input type="checkbox" id="useColorIcon" />
+            Use colorful icon
+          </label>
+        </div>
+
         <h2>Custom Sites</h2>
         <table id="wikiTable" class="wiki-table">
+          <colgroup>
+            <col style="width: 23%">
+            <col style="width: 60%">
+            <col style="width: 17%">
+          </colgroup>
           <thead>
             <tr>
               <th>Name</th>

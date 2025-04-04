@@ -48,6 +48,9 @@ body, .options {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+.options .wiki-table button + button {
+    margin-left: 8px;
 }  
 .options button:hover {
     background-color: #2563eb;
@@ -64,6 +67,7 @@ body, .options {
     width: 100%;
     max-width: 1000px;
     border-collapse: collapse;
+    table-layout: fixed;
 }  
 .options .wiki-table th,
 .options .wiki-table td {
@@ -73,7 +77,11 @@ body, .options {
 }  
 .options .wiki-table th {
     background-color: #2a2a3b;
-}  
+}
+.options .wiki-table td:nth-child(2) {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
 .options a {
     color: #60a5fa;
     text-decoration: none;
@@ -105,4 +113,23 @@ body, .options {
 .options .add-wiki-section button:hover {
     background-color: #2563eb;
 }
+.options .wiki-table-section .url-tip {
+    font-size: 13px;
+    background-color: #2a2a3b;
+    color: #ccc;
+    border-left: 4px solid #3b82f6;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+    max-width: 1000px; /* match table max-width */
+    box-sizing: border-box;
+  }
+  
+  .options .wiki-table-section .url-tip code {
+    color: #90cdf4;
+    background: #1e1e2f;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
   
